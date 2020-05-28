@@ -9,11 +9,34 @@ public class Radio {
     private int minSoundVolume = 0;
 
     public void addStationNumber(){
-        if (currentStationNumber == maxStationNumber){
+            if (currentStationNumber == maxStationNumber) {
+                currentStationNumber = minStationNumber - 1;
+            }
+            currentStationNumber++;
+    }
+
+    public void downStationNumber(){
+        if (currentStationNumber == minStationNumber) {
+            currentStationNumber = maxStationNumber + 1;
+        }
+        currentStationNumber--;
+    }
+
+    public void addSoundVolume (){
+        if (currentSoundVolume == maxSoundVolume){
             return;
         }
-        currentStationNumber++;
+        currentSoundVolume++;
     }
+
+    public void downSoundVolume (){
+        if (currentSoundVolume == minSoundVolume){
+            return;
+        }
+        currentSoundVolume--;
+    }
+
+
 
     public int getCurrentStationNumber() {
         return currentStationNumber;
