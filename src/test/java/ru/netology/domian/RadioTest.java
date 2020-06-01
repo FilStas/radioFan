@@ -13,6 +13,15 @@ class RadioTest {
         radio.addStationNumber();
         assertEquals(1,radio.getCurrentStationNumber());
     }
+
+    @Test
+    void shouldAddStationNumber9() {
+        Radio radio = new Radio();
+        radio.setCurrentStationNumber(8);
+        radio.addStationNumber();
+        assertEquals(9,radio.getCurrentStationNumber());
+    }
+
     @Test
     void shouldAddStationNumberAfterMax() {
         Radio radio = new Radio();
