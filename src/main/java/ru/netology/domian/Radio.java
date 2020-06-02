@@ -9,25 +9,34 @@ public class Radio {
     private int minSoundVolume = 0;
 
     public void addStationNumber() {
-        if (currentStationNumber == maxStationNumber) {
-            currentStationNumber = minStationNumber - 1;
-        }
-        if (currentStationNumber > maxStationNumber){
+        if (currentStationNumber > maxStationNumber) {
             return;
         }
-
-
+        if (currentStationNumber == maxStationNumber) {
+            currentStationNumber = minStationNumber - 1;
+            currentStationNumber++;
+            return;
+        }
+        if (currentStationNumber < minStationNumber) {
+            return;
+        }
         currentStationNumber++;
     }
 
     public void downStationNumber() {
-        if (currentStationNumber == minStationNumber) {
-            currentStationNumber = maxStationNumber + 1;
+        if (currentStationNumber > maxStationNumber) {
+            return;
         }
         if (currentStationNumber == minStationNumber) {
+            currentStationNumber = maxStationNumber + 1;
+            currentStationNumber--;
+            return;
+        }
+        if (currentStationNumber < minStationNumber) {
             return;
         }
         currentStationNumber--;
+
     }
 
     public void addSoundVolume() {
@@ -35,17 +44,19 @@ public class Radio {
             return;
         }
         if (currentSoundVolume > maxSoundVolume) {
-            return;
+
         }
+        this.maxSoundVolume = currentSoundVolume;
         currentSoundVolume++;
+
     }
 
     public void downSoundVolume() {
         if (currentSoundVolume == minSoundVolume) {
             return;
         }
-        if (currentSoundVolume < minSoundVolume) {
-            return;
+        if (currentSoundVolume > minSoundVolume) {
+            this.currentSoundVolume = currentSoundVolume;
         }
         currentSoundVolume--;
     }
@@ -71,10 +82,10 @@ public class Radio {
 
     public void setCurrentSoundVolume(int currentSoundVolume) {
         if (currentSoundVolume > maxSoundVolume) {
-            return;
+
         }
         if (currentSoundVolume < minSoundVolume) {
-            return;
+
         }
         this.currentSoundVolume = currentSoundVolume;
     }
