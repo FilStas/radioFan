@@ -17,15 +17,8 @@ public class Radio {
     }
 
     public void downStationNumber() {
-        if (currentStationNumber > maxStationNumber) {
-            return;
-        }
         if (currentStationNumber == minStationNumber) {
-            currentStationNumber = maxStationNumber + 1;
-            currentStationNumber--;
-            return;
-        }
-        if (currentStationNumber < minStationNumber) {
+            currentStationNumber = maxStationNumber;
             return;
         }
         currentStationNumber--;
@@ -33,10 +26,6 @@ public class Radio {
     }
 
     public void addSoundVolume() {
-        if (currentSoundVolume > maxSoundVolume) {
-            currentSoundVolume = maxSoundVolume;
-            return;
-        }
         if (currentSoundVolume == maxSoundVolume) {
             return;
         }
@@ -46,10 +35,6 @@ public class Radio {
     }
 
     public void downSoundVolume() {
-        if (currentSoundVolume < minSoundVolume) {
-            currentSoundVolume = minSoundVolume;
-            return;
-        }
         if (currentSoundVolume == minSoundVolume) {
             currentSoundVolume = minSoundVolume;
             return;
