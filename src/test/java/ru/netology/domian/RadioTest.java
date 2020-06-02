@@ -85,7 +85,7 @@ class RadioTest {
 
         radio.setCurrentSoundVolume(0);
         radio.addSoundVolume();
-        
+
         assertEquals(1, radio.getCurrentSoundVolume());
     }
 
