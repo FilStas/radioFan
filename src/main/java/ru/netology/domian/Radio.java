@@ -36,7 +36,6 @@ public class Radio {
 
     public void downSoundVolume() {
         if (currentSoundVolume == minSoundVolume) {
-            currentSoundVolume = minSoundVolume;
             return;
         }
         currentSoundVolume--;
