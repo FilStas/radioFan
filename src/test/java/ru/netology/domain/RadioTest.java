@@ -1,7 +1,6 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
-import ru.netology.domain.Radio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
