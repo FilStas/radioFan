@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-
 public class Radio {
     private int currentStationNumber;
     private int maxStationNumber = 10;
